@@ -1,4 +1,3 @@
-%\documentclass[review]{cvpr}
 \documentclass[final]{cvpr}
 
 \usepackage{times}
@@ -228,16 +227,18 @@ and the scene object.
    \includegraphics[scale=0.15]{../data/input/arthas_f.JPG}
    \caption{Original flash and no-flash pairs}
 \end{figure}
- 
+
+\newpage
 \section{Results}
 
+\subsection{Intermediate Result Visualization and Standard Final Result}
+See figure 2-5.
 \begin{figure}[ht]
    \centering
    \includegraphics[scale=0.035]{../data/output/arthas_nf_ratio.png}
    \includegraphics[scale=0.035]{../data/output/arthas_f_ratio.png}
    \caption{flash ratio visualization for flash and no-flash}
 \end{figure}
-\section{Conclusion}
 
 \begin{figure}[ht]
    \centering
@@ -257,22 +258,126 @@ and the scene object.
    \centering
    \includegraphics[scale=0.035]{../data/output/arthas_final_f_1.2_0.10_10_10.JPG}
    \includegraphics[scale=0.035]{../data/output/arthas_final_nf_1.2_0.10_10_10.JPG}
-   \caption{$p_b(x_p)$ visualization and distribution}
+   \caption{final standard result}
 \end{figure}
+
+\subsection{Changing Parameters}
+We are focusing on four set of parameters, 
+contrast parameter $c$,
+background standard deviation $\sigma$,
+$\gamma_f$,
+$\gamma_m$. The contrast parameter is a constant that 
+we multiply to the original image(and clip to 0 and 1 of course) 
+to enhance the contrast since the original images are probably 
+too dark.
+The latter two is the weight we give for 
+the foreground and background energy term respectively.
+
+The standard setting is 
+$c = 1.2, \sigma = 0.10, \gamma_f = \gamma_m = 10$
+
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[scale=0.035]{../data/output/arthas_final_f_1.0_0.10_10_10.JPG}
+   \includegraphics[scale=0.035]{../data/output/arthas_final_f_1.2_0.10_10_10.JPG}
+   \includegraphics[scale=0.035]{../data/output/arthas_final_f_1.4_0.10_10_10.JPG}
+   \caption{from to bottom : $ c = \{1.0,1.2,1.4\}$}
+\end{figure}
+\begin{figure}[ht]
+   \centering
+   \includegraphics[scale=0.035]{../data/output/arthas_final_nf_1.0_0.10_10_10.JPG}
+   \includegraphics[scale=0.035]{../data/output/arthas_final_nf_1.2_0.10_10_10.JPG}
+   \includegraphics[scale=0.035]{../data/output/arthas_final_nf_1.4_0.10_10_10.JPG}
+   \caption{from to bottom : $ c = \{1.0,1.2,1.4\}$}
+\end{figure}
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[scale=0.03]{../data/output/arthas_final_f_1.2_0.07_10_10.JPG}
+   \includegraphics[scale=0.03]{../data/output/arthas_final_f_1.2_0.10_10_10.JPG}
+   \includegraphics[scale=0.03]{../data/output/arthas_final_f_1.2_0.15_10_10.JPG}
+   \includegraphics[scale=0.03]{../data/output/arthas_final_f_1.2_0.20_10_10.JPG}
+   \caption{from to bottom : $ \sigma = \{0.07,0.10,0.15,0.20\}$}
+\end{figure}
+\begin{figure}[ht]
+   \centering
+   \includegraphics[scale=0.03]{../data/output/arthas_final_nf_1.2_0.07_10_10.JPG}
+   \includegraphics[scale=0.03]{../data/output/arthas_final_nf_1.2_0.10_10_10.JPG}
+   \includegraphics[scale=0.03]{../data/output/arthas_final_nf_1.2_0.15_10_10.JPG}
+   \includegraphics[scale=0.03]{../data/output/arthas_final_nf_1.2_0.20_10_10.JPG}
+   \caption{from to bottom : $ \sigma = \{0.07,0.10,0.15,0.20\}$}
+\end{figure}
+
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[scale=0.03]{../data/output/arthas_final_f_1.2_0.10_7_14.JPG}
+   \includegraphics[scale=0.03]{../data/output/arthas_final_f_1.2_0.10_10_10.JPG}
+   \includegraphics[scale=0.03]{../data/output/arthas_final_f_1.2_0.10_14_7.JPG}
+   \caption{from to bottom : $ \gamma_f : \gamma_m = \{1:2,1:1,2:1\}$}
+\end{figure}
+\begin{figure}[ht]
+   \centering
+   \includegraphics[scale=0.03]{../data/output/arthas_final_nf_1.2_0.10_7_14.JPG}
+   \includegraphics[scale=0.03]{../data/output/arthas_final_nf_1.2_0.10_10_10.JPG}
+   \includegraphics[scale=0.03]{../data/output/arthas_final_nf_1.2_0.10_14_7.JPG}
+   \caption{from to bottom : $ \gamma_f : \gamma_m = \{1:2,1:1,2:1\}$}
+\end{figure}
+
+\subsection{Discussion}
+See figure 6-11.
+
+\subsubsection{Effect of $c$}
+As $c$ increases, foreground true positive rate 
+increases just a little bit, while much more 
+background gets incorrectly classified. Hence higher 
+contrast does not work well.
+
+\subsubsection{Effect of $\sigma$}
+
+Effect of $\sigma$ is probably the most critical 
+among all factors. As $\sigma$ increases, we get much more 
+background stuff correctly classified. However, we also lose 
+some detail from the object(which is myself) around my jacket
+and my face. This phenomenon is easy to explain: 
+remember $\sigma$ represents what is the expected deviation 
+from the mean. As we increase the $\sigma$, we filtered out 
+much less candidates that are outliers(more inclusive).
+
+\subsubsection{Effect of $\gamma_f:\gamma_m$ ratio}
+As increase the relative weight of the $\gamma_f$, we can see 
+much more background region got misclassified as foreground while 
+there are little to no improvement on foreground. This indicates that 
+the background term is a better estimator, at least in this case.
 
 \newpage
 \section{Conclusion}
+We used a modified subset of methods from \textit{Sun et al.} 
+to implement a flash cut foreground extraction algorithm 
+with flash and no-flash image pairs. Then we discussed the effect of various
+variables and parameters that impact the distinction result to some extent. 
+Among all parameters, the difference standard deviation $\sigma$ is 
+the most important factor in our analysis. As a side result, $\sigma$ is probably 
+the most ideal candidate for implement continuous distinction in 
+the future(like we decide how 
+much we want in the foreground instead of binary distinction). The effect of 
+a lot of the factors are probably underestimated. For instance, the dark night and 
+low ISO setting, as well as many implementation changes from the original paper that 
+may cause drastic change. All in all, we are looking forward to examining the effect these
+factors and making improvements accordingly.
 
-\subsection{Acknowledgement}
 
-%-------------------------------------------------------------------------
-\subsection{Illustrations, graphs, and photographs}
-{\small\begin{verbatim}
-   \usepackage[dvips]{graphicx} ...
-   \includegraphics[width=0.8\linewidth]
-                   {myfile.eps}
-\end{verbatim}
-}
+
+\section{Acknowledgement}
+
+Thanks professor Ioannis (Yannis) Gkioulekas for his wonderful teaching 
+about computational photography this semester, as well as abundant 
+support from the course staff, such as providing the essential hardware
+equipments like the tripod and the Nikon D3500 camera. Also 
+thanks my roommate for taking pictures of me in such freezing winter night 
+in Pittsburgh.
+
 
 {\small
 \bibliographystyle{ieee_fullname}
