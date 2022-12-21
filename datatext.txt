@@ -1,0 +1,2 @@
+flash labeled ratio:  0.025468625
+non-flash labeled ratio:  0.08502925
