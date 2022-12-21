@@ -44,6 +44,8 @@ def foreground(nf_color, f_color):
     r_f = np.maximum((h_f - h_nf), 0)/(h_f)
     r_nf = np.maximum((h_nf - h_f), 0)/(h_nf)
 
+    writeimage(outputpath + "arthas_nf_ratio.png", r_nf)
+    writeimage(outputpath + "arthas_f_ratio.png", r_f)
     # showimage_raw(r_nf)
     # showimage_raw(r_f)
     # print(r_f)

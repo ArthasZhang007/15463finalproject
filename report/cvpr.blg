@@ -2,47 +2,45 @@ This is BibTeX, Version 0.99d (TeX Live 2022)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: cvpr.aux
 The style file: ieee_fullname.bst
-I found no \citation commands---while reading file cvpr.aux
 Database file #1: egbib.bib
-You've used 0 entries,
+You've used 2 entries,
             2120 wiz_defined-function locations,
-            576 strings with 4625 characters,
-and the built_in function-call counts, 19 in all, are:
-= -- 0
-> -- 0
+            588 strings with 4963 characters,
+and the built_in function-call counts, 433 in all, are:
+= -- 38
+> -- 14
 < -- 0
-+ -- 0
-- -- 0
-* -- 3
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
++ -- 6
+- -- 4
+* -- 15
+:= -- 77
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 8
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 2
+duplicate$ -- 14
+empty$ -- 45
+format.name$ -- 4
+if$ -- 91
 int.to.chr$ -- 0
-int.to.str$ -- 0
+int.to.str$ -- 2
 missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+newline$ -- 13
+num.names$ -- 4
+pop$ -- 18
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 6
 quote$ -- 0
-skip$ -- 1
+skip$ -- 14
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
+substring$ -- 10
+swap$ -- 2
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
+type$ -- 8
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
-(There was 1 error message)
+while$ -- 4
+width$ -- 3
+write$ -- 22

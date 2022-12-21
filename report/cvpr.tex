@@ -1,7 +1,3 @@
-% This version of CVPR template is provided by Ming-Ming Cheng.
-% Please leave an issue if you found a bug:
-% https://github.com/MCG-NKU/CVPR_Template.
-
 %\documentclass[review]{cvpr}
 \documentclass[final]{cvpr}
 
@@ -47,7 +43,7 @@
 \begin{abstract}
    This paper presents a partial implementation of the previous 
    \textbf{flash cut foreground extraction with flash and no-flash image pairs} 
-   algorithm from Sun et al[1]. It only used the most essential foreground energy
+   algorithm \cite{Authors1}. It only used the most essential foreground energy
    and background energy term to compute the labeling due to time and scope 
    complexity of the original project. It also uses different methods of 
    mean and standard deviation estimation to compute the probability attributes. 
@@ -116,16 +112,158 @@ The original data term $E_d(x_p)$ models the flash effects on the
 foreground, the (motion compensated) background, and the
 color likelihood. It consists of three terms:
 \begin{align}
-   E_d(x_p) = \gamma_fE_f(x_p) + \gamma_fE_f(x_p)
+   E_d(x_p) = \gamma_fE_f(x_p) + \gamma_fE_f(x_p) + E_c(x_p)
 \end{align}
-\section{Methodology}
 
+Again for the sake of complexity we emit the color term as well and focus on the first two 
+terms.
+
+\subsection{The foreground term $E_f$}
+$E_f$ is the foreground flash term, which tends to label
+the pixel with significant appearance change as foreground.
+
+In the original paper, color histograms are used for the computation. We will use 
+grayscale intensity histograms that simplifies the process.
+
+Basically, the histogram is just made of a number of evenly-distributed bins. 
+Each bin holds the count of pixels in the original image that has the intensity 
+inside the range of the bin. Since in our experiment the image is large enough to 
+provide efficient sources of bin elements, we will just use 256 bins for a 8-bit image,
+which means each pin will hold pixels that have a single intensity value.
+
+Let us denote the corresponding bin for pixel $p$ is $k_p$, and $h_k$ is the count of 
+pixels in bin $k$. Then the flash ratio for the flash and non-flash images is defined as
+\begin{align}
+   r_p^f = \max\{\frac{h_{k_p}^f - h_{k_p}^n}{h_{k_p}^f}, 0\}, 
+   r_p^n = \max\{\frac{h_{k_p}^n - h_{k_p}^f}{h_{k_p}^n}, 0\}
+\end{align} 
+
+In other words, the flash ratio refers to how much positive change in pixel count from 
+the flash classification to the non-flash classification for a single pixel $p$ and 
+vice versa. If the flash ratio is high, that means the pixel is more likely to belong 
+to the foreground since the flash has more effect on the foreground. 
+
+We then define the energy term based on the flash ratio with a robust parameter $\delta$ as
+\begin{align}
+   E_f(x_p) = 
+   \left\{\begin{matrix}
+      0 & x_p = 0 \\
+      \frac{1}{1-\delta}(\max\{r_p,\delta\} - \delta) & x_p = 1 \\
+     \end{matrix}
+     \right.
+\end{align}
+In our experiment we set the value of $\delta$ to 0.2.
+
+\subsection{The background term}
+$E_m$ is the background flash term, which models the
+motion-compensated flash effect on the background. It
+tends to label the pixel with good matching and small
+appearance changes as background. This energy term
+considers both flash and motion cues. 
+
+Suppose we have a dense motion field $m = \{m(p)\}$, such that 
+$p' = m(p)$ is simply the corresponding pixel in the flash image
+(after considering motion movement) compared to the original no-flash image.
+Since the image difference $I_d$ is defined as 
+\begin{align}
+   I_d = I_{p'}^f - I_{p}^n
+\end{align} 
+
+Since the user is expected to capture the flash/no-flash images
+with distant background in quick succession, the appearance
+change of the background is expected to be small
+and uniform. It is thus reasonable to model the flash difference
+distribution of all background pixels as a \textbf{Gaussian
+distribution} $N(I_d|\mu, \sigma^2)$. Then, we can define the 
+probability of a pixel $p$ belonging to the background as 
+\begin{align}
+   p_b(x) = \exp(-\sigma_b(I_d - \mu)^2)
+\end{align}
+where $\sigma_b$ is the adjust standard deviation value so that the 
+pixel with flash difference within the $\pm 3\sigma$ interal will be given
+a higher probability to be background. Finally, we can define the energy term 
+as 
+\begin{align}
+   E_m(x_p) = 
+   \left\{\begin{matrix}
+      2\max\{p_b(x_p),0.5\} - 1 & x_p = 1 \\
+      0 & x_p = 0 \\
+     \end{matrix}
+     \right.
+\end{align}
+with this definition, $E_m(x_p)$ is normalized to be in the range $[0,1]$. 
+
+\subsection{Mean and Standard Deviation Estimation for the Background Probability}
+We use a different method from the original paper to estimate $\mu $ and $\sigma$. 
+The original paper suggests a combination of making 1D histogram of flash difference 
+and use a SIFT sparse feature matching to estimate the $\mu $ and $\sigma$ more accurately.
+I simply calculate the mean from the distribution directly, and leave the standard deviation
+$\sigma$ actually a tunnable variable in later experiments. (In the original paper they 
+use the first local min bin after the mean and cutting off values of threshold to estimate 
+the standard deviation). 
+
+The default setting for the $\sigma$ value is 0.10.
+
+\subsection{Motion Estimation}
+We use the dense optical flow computation method from \cite{Authors2} and 
+simply call \textit{cv2.calcOpticalFlowFarneback()} from python opencv library.
+
+Basically we compute a 2D flow vector $flow = \{(dx,dy)\}$ for each pixel such 
+that  
+\begin{align}
+   I_f(x,y) = I_n(x+dx,y+dy)
+\end{align}
+
+For more details please refer to the paper.
+
+\section{Methodlogy}
+We took pictures around 4-5 pm at my backyard with tripod and Nikon D3500 camera.
+Notice during the shots there are some non-ignorable movements of both camera 
+and the scene object.
+
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[scale=0.15]{../data/input/arthas_i.JPG}
+   \includegraphics[scale=0.15]{../data/input/arthas_f.JPG}
+   \caption{Original flash and no-flash pairs}
+\end{figure}
+ 
 \section{Results}
 
+\begin{figure}[ht]
+   \centering
+   \includegraphics[scale=0.035]{../data/output/arthas_nf_ratio.png}
+   \includegraphics[scale=0.035]{../data/output/arthas_f_ratio.png}
+   \caption{flash ratio visualization for flash and no-flash}
+\end{figure}
+\section{Conclusion}
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[scale=0.5]{../data/output/Arthas_I_diff.png}
+   \includegraphics[scale=0.5]{../data/output/idiff_distribution.png}
+   \caption{$I_d$ visualization and distribution}
+\end{figure}
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[scale=0.5]{../data/output/p.png}
+   \includegraphics[scale=0.5]{../data/output/p_distr.png}
+   \caption{$p_b(x_p)$ visualization and distribution}
+\end{figure}
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[scale=0.035]{../data/output/arthas_final_f_1.2_0.10_10_10.JPG}
+   \includegraphics[scale=0.035]{../data/output/arthas_final_nf_1.2_0.10_10_10.JPG}
+   \caption{$p_b(x_p)$ visualization and distribution}
+\end{figure}
+
+\newpage
 \section{Conclusion}
 
 \subsection{Acknowledgement}
-
 
 %-------------------------------------------------------------------------
 \subsection{Illustrations, graphs, and photographs}

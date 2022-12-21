@@ -1,3 +1,15 @@
-\begin{thebibliography}{}\itemsep=-1pt
+\begin{thebibliography}{1}\itemsep=-1pt
+
+\bibitem{Authors1}
+Sun et al.
+\newblock "flash cut: Foreground extraction with flash and no-flash image
+  pairs", 2007.
+\newblock IEEE Conference on Computer Vision and Pattern Recognition, 2007,
+  https://doi.org/10.1109/cvpr.2007.383080.
+
+\bibitem{Authors2}
+Gunnar Farnebäck.
+\newblock "two-frame motion estimation based on polynomial expansion", 2003.
+\newblock Image Analysis, 2003, pp. 363–370.
 
 \end{thebibliography}

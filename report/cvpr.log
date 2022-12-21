@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.17)  20 DEC 2022 20:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.17)  20 DEC 2022 22:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -277,7 +277,7 @@ File: hpdftex.def 2022-11-13 v7.00u Hyperref driver for pdfTeX
 \c@bookmark@seq@number=\count297
 \Hy@SectionHShift=\skip54
 )
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 41.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 37.
  (c:/texlive/2022/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) (c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -287,24 +287,24 @@ File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
 ) (./cvpr.aux)
 \openout1 = `cvpr.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
  ABD: EveryShipout initializing macros (c:/texlive/2022/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
  (c:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -348,48 +348,97 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (c:/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 41.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 44.
+Package hyperref Info: Link coloring ON on input line 37.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 40.
  (c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 44.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
  (c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 44.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 40.
  (c:/texlive/2022/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [1{c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-] (./cvpr.bbl (./cvpr.brf)
+]
+<../data/input/arthas_i.JPG, id=26, 1445.4pt x 963.6pt>
+File: ../data/input/arthas_i.JPG Graphic file (type jpg)
+<use ../data/input/arthas_i.JPG>
+Package pdftex.def Info: ../data/input/arthas_i.JPG  used on input line 227.
+(pdftex.def)             Requested size: 216.80064pt x 144.53375pt.
+<../data/input/arthas_f.JPG, id=27, 1445.4pt x 963.6pt>
+File: ../data/input/arthas_f.JPG Graphic file (type jpg)
+<use ../data/input/arthas_f.JPG>
+Package pdftex.def Info: ../data/input/arthas_f.JPG  used on input line 228.
+(pdftex.def)             Requested size: 216.80064pt x 144.53375pt.
+<../data/output/arthas_nf_ratio.png, id=28, 6022.5pt x 4015.0pt>
+File: ../data/output/arthas_nf_ratio.png Graphic file (type png)
+<use ../data/output/arthas_nf_ratio.png>
+Package pdftex.def Info: ../data/output/arthas_nf_ratio.png  used on input line 236.
+(pdftex.def)             Requested size: 210.80904pt x 140.53935pt.
+<../data/output/arthas_f_ratio.png, id=29, 6022.5pt x 4015.0pt>
+File: ../data/output/arthas_f_ratio.png Graphic file (type png)
+<use ../data/output/arthas_f_ratio.png>
+Package pdftex.def Info: ../data/output/arthas_f_ratio.png  used on input line 237.
+(pdftex.def)             Requested size: 210.80904pt x 140.53935pt.
+<../data/output/Arthas_I_diff.png, id=30, 462.528pt x 346.896pt>
+File: ../data/output/Arthas_I_diff.png Graphic file (type png)
+<use ../data/output/Arthas_I_diff.png>
+Package pdftex.def Info: ../data/output/Arthas_I_diff.png  used on input line 244.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+<../data/output/idiff_distribution.png, id=32, 462.528pt x 346.896pt>
+File: ../data/output/idiff_distribution.png Graphic file (type png)
+<use ../data/output/idiff_distribution.png>
+Package pdftex.def Info: ../data/output/idiff_distribution.png  used on input line 245.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+ [2]
+
+LaTeX Warning: Text page 3 contains only floats.
+
+<../data/output/p.png, id=54, 462.528pt x 346.896pt>
+File: ../data/output/p.png Graphic file (type png)
+<use ../data/output/p.png>
+Package pdftex.def Info: ../data/output/p.png  used on input line 251.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+<../data/output/p_distr.png, id=55, 462.528pt x 346.896pt>
+File: ../data/output/p_distr.png Graphic file (type png)
+<use ../data/output/p_distr.png>
+Package pdftex.def Info: ../data/output/p_distr.png  used on input line 252.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+<../data/output/arthas_final_f_1.2_0.10_10_10.JPG, id=56, 6022.5pt x 4015.0pt>
+File: ../data/output/arthas_final_f_1.2_0.10_10_10.JPG Graphic file (type jpg)
+<use ../data/output/arthas_final_f_1.2_0.10_10_10.JPG>
+Package pdftex.def Info: ../data/output/arthas_final_f_1.2_0.10_10_10.JPG  used on input line 258.
+(pdftex.def)             Requested size: 210.80904pt x 140.53935pt.
+<../data/output/arthas_final_nf_1.2_0.10_10_10.JPG, id=57, 6022.5pt x 4015.0pt>
+File: ../data/output/arthas_final_nf_1.2_0.10_10_10.JPG Graphic file (type jpg)
+<use ../data/output/arthas_final_nf_1.2_0.10_10_10.JPG>
+Package pdftex.def Info: ../data/output/arthas_final_nf_1.2_0.10_10_10.JPG  used on input line 259.
+(pdftex.def)             Requested size: 210.80904pt x 140.53935pt.
+[3 <../data/input/arthas_i.JPG> <../data/input/arthas_f.JPG> <../data/output/arthas_nf_ratio.png (PNG copy)> <../data/output/arthas_f_ratio.png (PNG copy)> <../data/output/Arthas_I_diff.png> <../data/output/idiff_distribution.png>] (./cvpr.bbl (./cvpr.brf)
 \tf@brf=\write3
 \openout3 = `cvpr.brf'.
 
-
-
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
-
-) [2
-
-] (./cvpr.aux)
+) [4 <../data/output/p.png> <../data/output/p_distr.png> <../data/output/arthas_final_f_1.2_0.10_10_10.JPG> <../data/output/arthas_final_nf_1.2_0.10_10_10.JPG>] (./cvpr.aux)
 Package rerunfilecheck Info: File `cvpr.brf' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: 62C69F5344947E0042EE4679E5909245;96.
  ) 
 Here is how much of TeX's memory you used:
- 10549 strings out of 474971
- 162704 string characters out of 5780120
- 520949 words of memory out of 5000000
- 31877 multiletter control sequences out of 15000+600000
- 489388 words of font info for 74 fonts, out of 8000000 for 9000
+ 10666 strings out of 474971
+ 165668 string characters out of 5780120
+ 524009 words of memory out of 5000000
+ 31954 multiletter control sequences out of 15000+600000
+ 493637 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,9n,91p,277b,456s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{c:/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on cvpr.pdf (2 pages, 116818 bytes).
+ 87i,14n,91p,279b,465s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{c:/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on cvpr.pdf (4 pages, 38256773 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
- 14 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 166 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
+ 34 named destinations out of 1000 (max. 500000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
